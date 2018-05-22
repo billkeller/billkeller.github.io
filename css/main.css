@@ -1,0 +1,83 @@
+/* using a different box-model */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font: normal 16px Helvetica, Arial, sans-serif;
+	margin-top: 60px; /* make up the space that nav-main used to take up */
+}
+
+/* when an elements children
+are floated, use overflow: auto
+to keep its height intact */
+#nav-main {
+	background-color: rgba(0,0,0,1);
+	overflow: auto;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 100;
+}
+/* we have floated child LI's so
+we need to use overflow: auto */
+#nav-main ul {
+	overflow: auto;
+	margin: 0; /* get rid of user-agent CSS */
+	padding: 0;
+	list-style: none; /* get rid of discs */
+}
+
+#nav-main ul a {
+	color: white;
+	padding: 20px;
+	display: block;
+}
+#nav-main ul a:hover {
+	background-color: red;
+}
+
+#nav-main ul li {
+	float: left;
+}
+
+article {
+	border: 2px solid purple;
+}
+
+section {
+	border: 1px solid green;
+	padding: 20px;
+	margin: 10px;
+	position: relative;
+}
+
+span {
+	border: 1px dotted blue;
+	width: 100px;
+	margin: 10px;
+	padding: 10px;
+	display: inline-block;
+}
+
+article,
+aside {
+	float: left;
+	width: 50%;
+}
+
+footer {
+	background-color: bisque;
+	border: 2px solid blue;
+	clear: both;
+}
+
+.title-moved {
+	background-color: rgba(0,0,0,.5);
+	border: 5px solid bisque;
+	margin: 0;
+	padding: 10px;
+	position: absolute;
+	top: 40px;
+	left: 40px;
+}
